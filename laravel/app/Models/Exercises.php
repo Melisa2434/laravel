@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Exercises extends Model
+{
+    public function workout()
+    {
+        return $this->hasMany(Workout::class);
+    }
+}
