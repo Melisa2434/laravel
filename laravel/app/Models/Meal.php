@@ -3,18 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Customer;
+
 
 class Meal extends Model
 {
-    public function consumer()
+    protected $guarded = ['id'];
+
+    public function customer()
     {
-        return $this->belongsTo(Consumer::class);
+        return $this->belongsTo(Customer::class);
     }
 
-    public function foodItems()
-    {
-        return $this->hasMany(FoodItem::class);
-    }
+    
 
 
 }
